@@ -22,6 +22,7 @@ public class PostResource {
 
     PostMapper postMapper;
 
+    //TODO: fix Unauthorized (401)
     @GetMapping("/posts")
     public ResponseEntity<List<PostRecord>> getAllPosts() {
 

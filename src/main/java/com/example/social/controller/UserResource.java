@@ -19,6 +19,8 @@ public class UserResource {
     @Autowired
     UserRepository userRepository;
 
+    // PFV N USAR ESSE ENDPOINT, N TA FUNFANDO.
+    //todo: fazer funfar :D
     @GetMapping("/users")
     public String findAllUser(Model model) {
         List<User> users = userRepository.findAll();
