@@ -8,9 +8,14 @@ import java.io.Serializable;
 @Table(name = "posts")
 public class Post implements Serializable {
 
-    public Post(Long reposts, Long likes) {
+    public Post(Long id, Long reposts, Long likes, Long comments) {
         this.reposts = reposts;
         this.likes = likes;
+        this.comments = comments;
+    }
+
+    public Post() {
+        super();
     }
 
     @Id
@@ -25,7 +30,7 @@ public class Post implements Serializable {
     private Long likes;
 
     @Column(name = "comments")
-    private Post comments;
+    private Long comments;
 
     public Long getId() {
         return id;
@@ -51,11 +56,11 @@ public class Post implements Serializable {
         this.likes = likes;
     }
 
-    public Post getComments() {
+    public Long getComments() {
         return comments;
     }
 
-    public void setComments(Post comments) {
+    public void setComments(Long comments) {
         this.comments = comments;
     }
 

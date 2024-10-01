@@ -22,11 +22,10 @@ public class PostResource {
 
     PostMapper postMapper;
 
-    //TODO: fix Unauthorized (401)
     @GetMapping("/posts")
-    public ResponseEntity<List<PostRecord>> getAllPosts() {
+    public ResponseEntity<List<Post>> getAllPosts() {
 
-        List<PostRecord> postRecords = postRepository.findAll().stream().map(postMapper::toRecord).toList();
+        List<Post> postRecords = postRepository.findAll();
 
         return ResponseEntity.ok(postRecords);
     }
