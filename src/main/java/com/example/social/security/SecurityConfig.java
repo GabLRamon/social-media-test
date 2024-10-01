@@ -30,6 +30,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(configurer ->
                 configurer
                         .requestMatchers(HttpMethod.GET, "/api/posts").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/posts/**").permitAll()
 
         );
         http.httpBasic(Customizer.withDefaults());
